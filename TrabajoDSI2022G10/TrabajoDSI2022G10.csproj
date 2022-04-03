@@ -137,6 +137,9 @@
     <Content Include="Assets\Boton_Lenguajes.png" />
     <Content Include="Assets\Boton_Play.png" />
     <Content Include="Assets\Boton_Quit.png" />
+    <Content Include="Assets\Juego_Cuadro.png" />
+    <Content Include="Assets\Juego_Fondo.png" />
+    <Content Include="Assets\Juego_Panel.png" />
     <Content Include="Assets\Menu_Background.png" />
     <Content Include="Assets\Titulo.png" />
     <Content Include="Properties\Default.rd.xml" />
