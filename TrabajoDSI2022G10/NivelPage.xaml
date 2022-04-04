@@ -31,7 +31,12 @@
                                FontSize="60"/>
                 </StackPanel>
             </StackPanel>
-            
+            <Button x:Name="HomeButton"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Margin="20">
+                <Image Source="Assets/Nivel_HomeIcon.png" Height="50" Width="50"/>
+            </Button>
         </Grid>
     </Grid>
 </Page>
