@@ -69,5 +69,20 @@ namespace TrabajoDSI2022G10
         {
 
         }
+
+        private void MenuButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void AgainButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ContinueButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

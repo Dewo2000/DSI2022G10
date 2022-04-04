@@ -218,10 +218,22 @@
                    Height="50"
                    HorizontalAlignment="Right"
                    Margin="0,-50,70,0"/>
-            <Button x:Name="BackButton" 
+            <Button x:Name="MenuButton" 
                     HorizontalAlignment="Center"
                     Margin="0,375,0,0"
-                    Click="BackButton_Click" VerticalAlignment="Top">
+                    Click="MenuButton_Click" VerticalAlignment="Top">
+                <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="80"/>
+            </Button>
+            <Button x:Name="AgainButton" 
+                    HorizontalAlignment="Center"
+                    Margin="0,375,0,0"
+                    Click="AgainButton_Click" VerticalAlignment="Top">
+                <Image Source="Assets/Pausa_ComenzarNuevoBotones.png" Height="80"/>
+            </Button>
+            <Button x:Name="ContinueButton" 
+                    HorizontalAlignment="Center"
+                    Margin="0,375,0,0"
+                    Click="ContinueButton_Click" VerticalAlignment="Top">
                 <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
             </Button>
             <Slider HorizontalAlignment="Left" Margin="416,166,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
