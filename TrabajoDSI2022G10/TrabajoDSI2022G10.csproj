@@ -139,6 +139,7 @@
     <Content Include="Assets\Boton_Quit.png" />
     <Content Include="Assets\Juego_Cuadro.png" />
     <Content Include="Assets\Juego_Fondo.png" />
+    <Content Include="Assets\Juego_Niño.png" />
     <Content Include="Assets\Juego_Panel.png" />
     <Content Include="Assets\Juego_Pausa.png" />
     <Content Include="Assets\Juego_Progreso.png" />

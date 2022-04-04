@@ -58,6 +58,7 @@
                     >
                 <Image Source="Assets/Juego_Pausa.png"/>
             </Button>
+            <Image Source="Assets/Juego_Niño.png"  Height="150" Width="80" Margin="1410,302,10,-452" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
 
         </Grid>
 
