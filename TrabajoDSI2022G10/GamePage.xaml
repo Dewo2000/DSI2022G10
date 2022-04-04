@@ -3,7 +3,6 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:TrabajoDSI2022G10"
-    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -21,7 +20,7 @@
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
+                <RowDefinition />
             </Grid.RowDefinitions>
             <Image  HorizontalAlignment="Left"     
                     VerticalAlignment="Top"
@@ -58,8 +57,27 @@
                     >
                 <Image Source="Assets/Juego_Pausa.png"/>
             </Button>
-            <Image Source="Assets/Juego_Niño.png"  Height="150" Width="80" Margin="1410,302,10,-452" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-
+            <Image Source="Assets/Juego_Niño.png"  Height="150" Width="80" Margin="0,316,10,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Image Source="Assets/Juego_BarraVida.png" Height="50" Width="70" Margin="0,299,9,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Image Source="Assets/Juego_Enemigo.png" Height="70" Width="70" Margin="111,151,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Image Source="Assets/Juego_VidaEnemigo.png" Height="15" Width="62" Margin="115,144,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <StackPanel VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.Row="1" >
+                <Button x:Name="Bomb" Width="100" Height="100" Click="Objects_Click">
+                    <Image Source="Assets/bomba.png"/>
+                </Button>
+                <Button x:Name="Ice" Width="100" Height="100" Click="Objects_Click">
+                    <Image Source="Assets/hielo.png"/>
+                </Button>
+                <Button x:Name="Vaccine" Width="100" Height="100" Click="Objects_Click">
+                    <Image Source="Assets/vacuna.png"/>
+                </Button>
+                <Button x:Name="Wind" Width="100" Height="100" Click="Objects_Click">
+                    <Image Source="Assets/viento.png"/>
+                </Button>
+                <Button x:Name="Shield" Width="100" Height="100" Click="Objects_Click">
+                    <Image Source="Assets/escudo.png"/>
+                </Button>
+            </StackPanel>
         </Grid>
 
         <Grid>
@@ -159,6 +177,10 @@
                 <Image Source="Assets/Juego_Cuadro.png"/>
             </Button>
 
+        </Grid>
+        <Grid x:Name="PausePanel" Background="Transparent" Width="800" Height="800" >
+            <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" /> 
+            
         </Grid>
     </Grid>
 </Page>

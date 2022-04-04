@@ -33,25 +33,39 @@ namespace TrabajoDSI2022G10
         {
             sel = sender as Button;
             MenuFlyout flyout = new MenuFlyout();
+     
+            flyout.Items.Add(newitem("Juego_Alcohol.png","250","Alcohol"));
+            flyout.Items.Add(newitem("Juego_Gel.png", "200", "Gel"));
+            flyout.Items.Add(newitem("Juego_Jabon.png", "100", "Jabon"));
+            flyout.Items.Add(newitem("Juego_Mascarillas.png", "150", "Mascarillas"));
+            flyout.Items.Add(newitem("Juego_Paracetamol.png", "500", "Paracetamol"));
+            flyout.Items.Add(newitem("Juego_UV.png", "200", "UV"));
+            flyout.Items.Add(newitem("Juego_Cuadro.png", "", "Reset"));
+            sel.Flyout = flyout;
+        }
+        MenuFlyoutItem newitem(string path,string price ,string name)
+        {
             MenuFlyoutItem item = new MenuFlyoutItem();
-            item.Text = "Off";
+            item.Text = name + " " +price;
             var bmi = new BitmapIcon();
-            bmi.UriSource = new Uri("ms-appx:///Assets/Boton_Quit.png");
+            string url = "ms-appx:///Assets/"+path;
+            bmi.UriSource = new Uri(url);
             bmi.ShowAsMonochrome = false;
             item.Icon = bmi;
             item.Click += (s, e1) =>
             {
                 Image img = new Image();
-                img.Source = new BitmapImage(new Uri("ms-appx:///Assets/Boton_Quit.png"));
+                img.Source = new BitmapImage(new Uri(url));
                 sel.Content = img;
 
             };
-
-            flyout.Items.Add(item);
-            sel.Flyout = flyout;
+            return item;
         }
-
         private void PauseB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Objects_Click(object sender, RoutedEventArgs e)
         {
 
         }
