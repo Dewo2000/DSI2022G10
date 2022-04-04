@@ -32,9 +32,12 @@ namespace TrabajoDSI2022G10
 
         }
 
-        private void BackButton_Click()
+        private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
     }
 }

@@ -7,7 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <Style TargetType="Slider">
+            <Setter Property="Value" Value="50"/>
+            <Setter Property="Width" Value="350"/>
+            <Setter Property="Minimum" Value="0"/>
+            <Setter Property="Maximum" Value="100"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Foreground" Value="#6200ee"/>
+            <Setter Property="Margin" Value="0,-35,150,0"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Snap ITC"/>
+            <Setter Property="Foreground" Value="#192751"/>
+        </Style>
+    </Page.Resources>
     <Grid>
         <Grid.Background >
             <ImageBrush x:Name="Background" ImageSource="Assets/Menu_Background.png" Stretch="Fill" Opacity="0.5"/>
@@ -36,11 +50,6 @@
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button x:Name="IdiomaButton" Margin="20">
                     <Image Source="Assets/Boton_Lenguajes.png"/>
-                    <Button.Flyout>
-                        <Flyout>
-                            <TextBlock Text="IDIOMAS"/>
-                        </Flyout>
-                    </Button.Flyout>
                 </Button>
                 <Button x:Name="SalidaButton" Margin="20" >
                     <Image Source="Assets/Boton_Quit.png"/>
@@ -62,32 +71,30 @@
             </StackPanel.Background>
             <TextBlock Text="CONFIGURACION" 
                        HorizontalAlignment="Center"
-                       Foreground="#192751"
-                       FontFamily="Snap ITC"
                        FontSize="50"
-                       Margin="0,40,0,100"
-                       />
+                       Margin="0,40,0,0"/>
             <Image Source="Assets/Configuracion_Icon.png" Height="50" Width="50"
-                   Margin="0,-260,600,0"/>
+                   Margin="0,-60,600,0"/>
             <TextBlock Text="Banda Sonora"
                        FontSize="35"
-                       FontFamily="Snap ITC"
-                       Foreground="#192751"
-                       Margin="75,0,0,0"/>
-            <Slider x:Name="BandaSonoraSlider" Minimum="0" Maximum="100" 
-                    Value="50"
-                    Width="350"
-                    HorizontalAlignment="Right"
-                    ValueChanged="BandaSonoraSlider_ValueChanged"
-                    Margin="0,-35,150,0"/>
+                       Margin="75,150,0,0"/>
+            <Slider x:Name="BandaSonoraSlider"/>
             <TextBlock Text="Effecto de Sonido"
                        FontSize="30"
-                       FontFamily="Snap ITC"
-                       Foreground="#192751"
-                       Margin="50,60,0,0"/>
+                       Margin="50,100,0,0"/>
+            <Image Source="Assets/Configuracion_IconBGM.png"
+                   Height="50"
+                   HorizontalAlignment="Right"
+                   Margin="0,-320,70,0"/>
+            <Slider x:Name="EffectoSonidoSlider"/>
+            <Image Source="Assets/Configuracion_IconEffect.png"
+                   Height="50"
+                   HorizontalAlignment="Right"
+                   Margin="0,-50,70,0"/>
             <Button x:Name="BackButton" 
                     HorizontalAlignment="Center"
-                    Margin="0,0,0,0">
+                    Margin="0,150,0,0"
+                    Click="BackButton_Click">
                 <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
             </Button>
         </StackPanel>

@@ -7,8 +7,97 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    <Page.Resources>
+        <Style TargetType="Slider">
+            <Setter Property="Value" Value="50"/>
+            <Setter Property="Width" Value="350"/>
+            <Setter Property="Minimum" Value="0"/>
+            <Setter Property="Maximum" Value="100"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Foreground" Value="#6200ee"/>
+            <Setter Property="Margin" Value="0,-35,150,0"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Snap ITC"/>
+            <Setter Property="Foreground" Value="#192751"/>
+        </Style>
+    </Page.Resources>
     <Grid>
-
+        <Grid.Background >
+            <ImageBrush x:Name="Background" ImageSource="Assets/Menu_Background.png" Stretch="Fill" Opacity="0.5"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="VIRUS 2022"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="100"
+                   Foreground="#b85904"
+                   FontFamily="Snap ITC"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="210"/>
+                <RowDefinition Height="210"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="PlayButton" Grid.Row="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+                <Image Source="Assets/Boton_Play.png"/>
+            </Button>
+            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="IdiomaButton" Margin="20">
+                    <Image Source="Assets/Boton_Lenguajes.png"/>
+                </Button>
+                <Button x:Name="SalidaButton" Margin="20" >
+                    <Image Source="Assets/Boton_Quit.png"/>
+                </Button>
+                <Button x:Name="ConfiguracionButton" Margin="20">
+                    <Image Source="Assets/Boton_Configuracion.png"/>
+                </Button>
+            </StackPanel>
+            <TextBlock Text="Universidad Complutense de madrid / DSI 2022 / Dewei Chen  Menggen Hu" 
+                       FontSize="30"
+                       FontFamily="Snap ITC"
+                       Grid.Row="2" 
+                       HorizontalAlignment="Center" 
+                       VerticalAlignment="Bottom"/>
+        </Grid>
+        <StackPanel Margin="300,75,300,75" Grid.RowSpan="2">
+            <StackPanel.Background>
+                <ImageBrush ImageSource="Assets/Configuracion_Fondo.png"/>
+            </StackPanel.Background>
+            <TextBlock Text="LENGUAJES" 
+                       HorizontalAlignment="Center"
+                       FontSize="50"
+                       Margin="0,40,0,0"/>
+            <Image Source="Assets/Lenguaje_Icon.png" Height="50" Width="50"
+                   Margin="0,-60,500,0"/>
+            <Button x:Name="ChineseButton" 
+                    HorizontalAlignment="Left"
+                    Margin="100,150,0,0">
+                <Image Source="Assets/Lenguaje_China.png" Height="150"/>
+            </Button>
+            <Button x:Name="EspañolButton" 
+                    HorizontalAlignment="Right"
+                    Margin="0,-160,100,0">
+                <Image Source="Assets/Lenguaje_España.png" Height="150"/>
+            </Button>
+            <TextBlock Text="Chino" 
+                       FontSize="40"
+                       Margin="160,30,0,0"/>
+            <TextBlock Text="Español" 
+                       FontSize="40"
+                       HorizontalAlignment="Right"
+                       Margin="0,-50,140,0"/>
+            <Button x:Name="BackButton" 
+                    HorizontalAlignment="Center"
+                    Margin="0,150,0,0"
+                    Click="BackButton_Click">
+                <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>

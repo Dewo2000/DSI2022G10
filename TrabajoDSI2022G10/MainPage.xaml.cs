@@ -34,7 +34,7 @@ namespace TrabajoDSI2022G10
 
         private void IdiomaButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(LanguajePage));
         }
 
         private void SalidaButton_Click(object sender, RoutedEventArgs e)
@@ -44,7 +44,7 @@ namespace TrabajoDSI2022G10
 
         private void ConfiguracionButton_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(ConfigurationPage));
         }
     }
 }
