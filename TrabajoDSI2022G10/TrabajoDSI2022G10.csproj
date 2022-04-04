@@ -181,6 +181,7 @@
     <Content Include="Assets\Pausa_ComenzarNuevoBotones.png" />
     <Content Include="Assets\Pausa_ContinuarBoton.png" />
     <Content Include="Assets\Pausa_MenuPrincipalBotones.png" />
+    <Content Include="Assets\NIvel_LockIcon.png" />
     <Content Include="Assets\Titulo.png" />
     <Content Include="Assets\vacuna.png" />
     <Content Include="Assets\Victoria_NivelBoton.png" />
