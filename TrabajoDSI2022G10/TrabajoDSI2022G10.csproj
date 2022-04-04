@@ -134,6 +134,7 @@
     <Compile Include="NivelPage.xaml.cs">
       <DependentUpon>NivelPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -142,27 +143,49 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\bomba.png" />
     <Content Include="Assets\Boton_Configuracion.png" />
     <Content Include="Assets\Boton_Lenguajes.png" />
     <Content Include="Assets\Boton_Play.png" />
     <Content Include="Assets\Boton_Quit.png" />
+    <Content Include="Assets\Compra_Pagar.png" />
     <Content Include="Assets\Configuracion_Fondo.png" />
     <Content Include="Assets\Configuracion_Icon.png" />
     <Content Include="Assets\Configuracion_IconBGM.png" />
     <Content Include="Assets\Configuracion_IconEffect.png" />
     <Content Include="Assets\Configuracion_Volver.png" />
+    <Content Include="Assets\escudo.png" />
+    <Content Include="Assets\hielo.png" />
+    <Content Include="Assets\Juego_Alcohol.png" />
+    <Content Include="Assets\Juego_BarraVida.png" />
     <Content Include="Assets\Juego_Cuadro.png" />
+    <Content Include="Assets\Juego_Enemigo.png" />
     <Content Include="Assets\Juego_Fondo.png" />
+    <Content Include="Assets\Juego_Gel.png" />
+    <Content Include="Assets\Juego_Herramientas.png" />
+    <Content Include="Assets\Juego_Jabon.png" />
+    <Content Include="Assets\Juego_Mascarillas.png" />
     <Content Include="Assets\Juego_Niño.png" />
     <Content Include="Assets\Juego_Panel.png" />
+    <Content Include="Assets\Juego_Paracetamol.png" />
     <Content Include="Assets\Juego_Pausa.png" />
     <Content Include="Assets\Juego_Progreso.png" />
+    <Content Include="Assets\Juego_Punto.png" />
+    <Content Include="Assets\Juego_UV.png" />
+    <Content Include="Assets\Juego_VidaEnemigo.png" />
     <Content Include="Assets\Lenguaje_China.png" />
     <Content Include="Assets\Lenguaje_España.png" />
     <Content Include="Assets\Lenguaje_Icon.png" />
     <Content Include="Assets\Menu_Background.png" />
     <Content Include="Assets\Nivel_HomeIcon.png" />
+    <Content Include="Assets\Pausa_ComenzarNuevoBotones.png" />
+    <Content Include="Assets\Pausa_ContinuarBoton.png" />
+    <Content Include="Assets\Pausa_MenuPrincipalBotones.png" />
     <Content Include="Assets\Titulo.png" />
+    <Content Include="Assets\vacuna.png" />
+    <Content Include="Assets\Victoria_NivelBoton.png" />
+    <Content Include="Assets\Victoria_SiguienteButton.png" />
+    <Content Include="Assets\viento.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
