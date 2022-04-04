@@ -75,25 +75,46 @@ namespace TrabajoDSI2022G10
         private void Objects_Click(object sender, RoutedEventArgs e)
         {
             object2buy = sender as Button;
+            MenuFlyout flyout = new MenuFlyout();
+            MenuFlyoutItem item = new MenuFlyoutItem();
+            item.Text = "COMPRAR";
+            item.Click += (s, e1) =>
+            {
+                buy();
+            };
+            flyout.Items.Add(item);
+            bool exists = false;
             switch (object2buy.Name)
             {
                 case "Bomb":
-                    Ctxt.Text = "QUIERES GASTAR 150 MONEDAS PARA COMPRAR BOMBA";
+                    if (bomb > 0) exists =true;
                     break;
                 case "Ice":
-                    Ctxt.Text = "QUIERES GASTAR 100 MONEDAS PARA COMPRAR HIELO";
+                    if (ice > 0) exists = true;
                     break;
                 case "Vaccine":
-                    Ctxt.Text = "QUIERES GASTAR 100 MONEDAS PARA COMPRAR VACUNA";
+                    if (vaccine > 0) exists = true;
                     break;
                 case "Wind":
-                    Ctxt.Text = "QUIERES GASTAR 80 MONEDAS PARA COMPRAR VIENTO";
+                    if (wind > 0) exists = true;
                     break;
                 case "Shield":
-                    Ctxt.Text = "QUIERES GASTAR 120 MONEDAS PARA COMPRAR ESCUDO";
+                    if (shield > 0) exists = true;
                     break;
             }
-            BuyPanel.Visibility = Visibility.Visible;
+
+            if (exists)
+            {
+                MenuFlyoutItem itemU = new MenuFlyoutItem();
+                itemU.Text = "USAR";
+                itemU.Click += (s, e1) =>
+                {
+                    Use();
+                };
+                flyout.Items.Add(itemU);
+            }
+            object2buy.Flyout = flyout;
+
         }
 
         private void MenuButton_Click(object sender, RoutedEventArgs e)
@@ -130,13 +151,8 @@ namespace TrabajoDSI2022G10
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ice)));
                     break;
                 case "Vaccine":
-
                     vaccine++;
-                   
-
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
-
-                   
                     break;
                 case "Wind":
                     wind++;
@@ -148,7 +164,53 @@ namespace TrabajoDSI2022G10
                     break;
             }
         }
-
+        private void buy()
+        {
+            switch (object2buy.Name)
+            {
+                case "Bomb":
+                    Ctxt.Text = "QUIERES GASTAR 150 MONEDAS PARA COMPRAR BOMBA";
+                    break;
+                case "Ice":
+                    Ctxt.Text = "QUIERES GASTAR 100 MONEDAS PARA COMPRAR HIELO";
+                    break;
+                case "Vaccine":
+                    Ctxt.Text = "QUIERES GASTAR 100 MONEDAS PARA COMPRAR VACUNA";
+                    break;
+                case "Wind":
+                    Ctxt.Text = "QUIERES GASTAR 80 MONEDAS PARA COMPRAR VIENTO";
+                    break;
+                case "Shield":
+                    Ctxt.Text = "QUIERES GASTAR 120 MONEDAS PARA COMPRAR ESCUDO";
+                    break;
+            }
+            BuyPanel.Visibility = Visibility.Visible;
+        }
+        private void Use() {
+            switch (object2buy.Name)
+            {
+                case "Bomb":
+                    bomb--;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(bomb)));
+                    break;
+                case "Ice":
+                    ice--;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ice)));
+                    break;
+                case "Vaccine":
+                    vaccine--;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
+                    break;
+                case "Wind":
+                    wind--;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(wind)));
+                    break;
+                case "Shield":
+                    shield--;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(shield)));
+                    break;
+            }
+        }
         private void GoBack(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(NivelPage));

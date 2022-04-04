@@ -122,7 +122,6 @@
     <Compile Include="ConfigurationPage.xaml.cs">
       <DependentUpon>ConfigurationPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GameLogic.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -135,7 +134,6 @@
     <Compile Include="NivelPage.xaml.cs">
       <DependentUpon>NivelPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ObservableObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
