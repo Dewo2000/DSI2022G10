@@ -28,19 +28,20 @@
                 <RowDefinition Height="210"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="Play" Grid.Row="0"
+            <Button x:Name="PlayButton" Grid.Row="0"
                     HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                    VerticalAlignment="Center"
+                    Click="PlayButton_Click">
                 <Image Source="Assets/Boton_Play.png"/>
             </Button>
             <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="Idioma" Margin="20">
+                <Button x:Name="IdiomaButton" Margin="20" Click="IdiomaButton_Click">
                     <Image Source="Assets/Boton_Lenguajes.png"/>
                 </Button>
-                <Button x:Name="Salida" Margin="20">
+                <Button x:Name="SalidaButton" Margin="20" Click="SalidaButton_Click">
                     <Image Source="Assets/Boton_Quit.png"/>
                 </Button>
-                <Button x:Name="Configuracion" Margin="20">
+                <Button x:Name="ConfiguracionButton" Margin="20" Click="ConfiguracionButton_Click">
                     <Image Source="Assets/Boton_Configuracion.png"/>
                 </Button>
             </StackPanel>

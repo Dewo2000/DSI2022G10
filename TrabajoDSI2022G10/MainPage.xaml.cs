@@ -26,5 +26,25 @@ namespace TrabajoDSI2022G10
         {
             this.InitializeComponent();
         }
+
+        private void PlayButton_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(NivelPage));
+        }
+
+        private void IdiomaButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SalidaButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ConfiguracionButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
