@@ -49,6 +49,11 @@ namespace TrabajoDSI2022G10
 
             flyout.Items.Add(item);
             sel.Flyout = flyout;
-        }    
+        }
+
+        private void PauseB_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

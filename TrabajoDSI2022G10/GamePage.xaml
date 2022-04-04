@@ -23,8 +23,9 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Image Source="/Assets/Juego_Panel.png" Height="150" Width="350" Margin="0,-7,1150,7">
-            </Image>
+            <Image  HorizontalAlignment="Left"     
+                    VerticalAlignment="Top"
+                    Source="/Assets/Juego_Panel.png" Height="136" Width="350" Stretch="Fill"/>
 
             <TextBlock Text="Puntuacion: "
                        FontSize="30"
@@ -46,7 +47,18 @@
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
                        VerticalAlignment="Bottom" Margin="235,0,0,81"/>
-            
+
+            <Image 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top" Source="/Assets/Juego_Progreso.png" Height="136" Width="574" Stretch="Fill">
+            </Image>
+            <Button HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                x:Name="PauseB" Click="PauseB_Click"  Height="100" Width="100" Margin="1390,18,0,0" 
+                    >
+                <Image Source="Assets/Juego_Pausa.png"/>
+            </Button>
+
         </Grid>
 
         <Grid>
