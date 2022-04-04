@@ -122,6 +122,7 @@
     <Compile Include="ConfigurationPage.xaml.cs">
       <DependentUpon>ConfigurationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GameLogic.cs" />
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
@@ -160,6 +161,7 @@
     <Content Include="Assets\Juego_BarraVida.png" />
     <Content Include="Assets\Juego_Cuadro.png" />
     <Content Include="Assets\Juego_Enemigo.png" />
+    <Content Include="Assets\Juego_Euro.png" />
     <Content Include="Assets\Juego_Fondo.png" />
     <Content Include="Assets\Juego_Gel.png" />
     <Content Include="Assets\Juego_Herramientas.png" />

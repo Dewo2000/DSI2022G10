@@ -25,6 +25,10 @@
             <Setter Property="FontFamily" Value="Snap ITC"/>
             <Setter Property="Foreground" Value="#192751"/>
         </Style>
+        <Style x:Key="Obj" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Snap ITC"/>
+            <Setter Property="Foreground" Value="#FFE40B33"/>
+        </Style>
     </Page.Resources>
 
     <Grid >
@@ -77,6 +81,7 @@
             <Image Source="Assets/Juego_BarraVida.png" Height="50" Width="70" Margin="0,299,9,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
             <Image Source="Assets/Juego_Enemigo.png" Height="70" Width="70" Margin="111,151,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
             <Image Source="Assets/Juego_VidaEnemigo.png" Height="15" Width="62" Margin="115,144,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
             <StackPanel VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.Row="1" >
                 <Button x:Name="Bomb" Width="100" Height="100" Click="Objects_Click">
                     <Image Source="Assets/bomba.png"/>
@@ -93,8 +98,14 @@
                 <Button x:Name="Shield" Width="100" Height="100" Click="Objects_Click">
                     <Image Source="Assets/escudo.png"/>
                 </Button>
-
             </StackPanel>
+
+            <TextBlock Text="{x:Bind bomb , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,445,0" Style="{StaticResource Obj}"/>
+            <TextBlock Text="{x:Bind ice , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,345,0" Style="{StaticResource Obj}"/>
+            <TextBlock Text="{x:Bind vaccine , Mode=TwoWay}"  Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,245,0" Style="{StaticResource Obj}"/>
+            <TextBlock Text="{x:Bind wind , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,145,0" Style="{StaticResource Obj}"/>
+            <TextBlock Text="{x:Bind shield , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,45,0" Style="{StaticResource Obj}"/>
+
         </Grid>
 
         <Grid>

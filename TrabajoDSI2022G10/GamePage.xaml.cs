@@ -26,33 +26,12 @@ namespace TrabajoDSI2022G10
     {
         Button sel;
         Button object2buy;
-        //int ice=0, bomb=0, shield, vaccine, wind;
-        //private DispatcherTimer _btimer,_itimer,_stimer,_vtimer,_wtimer;
+        int ice=0, bomb=0, shield=0, vaccine=0, wind=0;
+       
         public GamePage()
         {
             this.InitializeComponent();
-            //_btimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            //_itimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            //_stimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            //_vtimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-            //_wtimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
 
-            //_btimer.Tick += (sender, o) =>
-            //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(bomb)));
-            //_itimer.Tick += (sender, o) =>
-            //   PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ice)));
-            //_stimer.Tick += (sender, o) =>
-            //   PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(shield)));
-            //_vtimer.Tick += (sender, o) =>
-            //   PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
-            //_wtimer.Tick += (sender, o) =>
-            //   PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(wind)));
-
-            //_btimer.Start();
-            //_itimer.Start();
-            //_stimer.Start();
-            //_vtimer.Start();
-            //_wtimer.Start();
 
         }
 
@@ -143,19 +122,29 @@ namespace TrabajoDSI2022G10
             switch (object2buy.Name)
             {
                 case "Bomb":
-                    
+                    bomb++;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(bomb)));
                     break;
                 case "Ice":
-                    
+                    ice++;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ice)));
                     break;
                 case "Vaccine":
-                    
+
+                    vaccine++;
+                   
+
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
+
+                   
                     break;
                 case "Wind":
-                    
+                    wind++;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(wind)));
                     break;
                 case "Shield":
-                    
+                    shield++;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(shield)));
                     break;
             }
         }
