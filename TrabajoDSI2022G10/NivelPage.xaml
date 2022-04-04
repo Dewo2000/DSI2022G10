@@ -38,7 +38,7 @@
                     Click="HomeButton_Click">
                 <Image Source="Assets/Nivel_HomeIcon.png" Height="75" Width="75"/>
             </Button>
-            <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel Background="#7584a6" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
                     <Button Background="#aebddb" Height="100" Width="100" Margin="10" Click="Button_Click">
                         <TextBlock Text="1" FontSize="75" HorizontalAlignment="Center" VerticalAlignment="Center"/>
@@ -70,7 +70,7 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
                     <Button Background="#545d77" Height="100" Width="100" Margin="10" >
                         <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -101,8 +101,8 @@
                         <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Button>
                 </StackPanel>
-            </StackPanel>
-            <StackPanel Grid.Row="3" Orientation="Horizontal">
+            </StackPanel >
+            <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
                 <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
                     <Button Background="#545d77" Height="100" Width="100" Margin="10" >
                         <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>

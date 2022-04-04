@@ -34,7 +34,7 @@ namespace TrabajoDSI2022G10
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(GamePage));
         }
     }
 }
