@@ -119,8 +119,14 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ConfigurationPage.xaml.cs">
+      <DependentUpon>ConfigurationPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LanguajePage.xaml.cs">
+      <DependentUpon>LanguajePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -140,6 +146,9 @@
     <Content Include="Assets\Boton_Lenguajes.png" />
     <Content Include="Assets\Boton_Play.png" />
     <Content Include="Assets\Boton_Quit.png" />
+    <Content Include="Assets\Configuracion_Fondo.png" />
+    <Content Include="Assets\Configuracion_Icon.png" />
+    <Content Include="Assets\Configuracion_Volver.png" />
     <Content Include="Assets\Juego_Cuadro.png" />
     <Content Include="Assets\Juego_Fondo.png" />
     <Content Include="Assets\Juego_Niño.png" />
@@ -162,7 +171,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ConfigurationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="GamePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LanguajePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

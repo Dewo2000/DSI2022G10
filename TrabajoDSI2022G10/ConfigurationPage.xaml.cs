@@ -13,36 +13,21 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
 namespace TrabajoDSI2022G10
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class ConfigurationPage : Page
     {
-        public MainPage()
+        public ConfigurationPage()
         {
             this.InitializeComponent();
         }
 
-        private void PlayButton_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(NivelPage));
-        }
-
-        private void IdiomaButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void SalidaButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Exit();
-        }
-
-        private void ConfiguracionButton_Click(object sender, RoutedEventArgs e)
+        private void BandaSonoraSlider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
         {
 
         }
