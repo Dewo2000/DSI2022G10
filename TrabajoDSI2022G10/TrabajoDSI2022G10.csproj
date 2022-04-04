@@ -161,6 +161,7 @@
     <Content Include="Assets\Lenguaje_España.png" />
     <Content Include="Assets\Lenguaje_Icon.png" />
     <Content Include="Assets\Menu_Background.png" />
+    <Content Include="Assets\Nivel_HomeIcon.png" />
     <Content Include="Assets\Titulo.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
