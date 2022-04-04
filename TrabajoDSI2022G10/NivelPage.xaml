@@ -7,8 +7,31 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
+    <Page.Resources>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Snap ITC"/>
+            <Setter Property="Foreground" Value="#192751"/>
+        </Style>
+    </Page.Resources>
+    <Grid Background="#00948f">
+        <Grid Margin="50" Background="#7fb3b9">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <StackPanel Background="#475f86" Height="150" Width="700" Grid.Row="0">
+                <StackPanel Background="#7791c0" 
+                            Height="100"
+                            Margin="25">
+                    <TextBlock Text="NIVELES"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center"
+                               FontSize="60"/>
+                </StackPanel>
+            </StackPanel>
+            
+        </Grid>
     </Grid>
 </Page>
