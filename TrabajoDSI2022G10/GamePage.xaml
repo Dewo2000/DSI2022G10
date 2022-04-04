@@ -43,22 +43,23 @@
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Bottom" Margin="30,0,0,81"/>
+                       VerticalAlignment="Bottom" Margin="15,0,0,73"/>
             <TextBlock Text="Monedas: "
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Bottom" Margin="30,0,0,37"/>
+                       VerticalAlignment="Bottom" Margin="18,0,0,37"/>
             <TextBlock Text="220"
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Bottom" Margin="193,0,0,37"/>
+                       VerticalAlignment="Bottom" Margin="175,0,0,37"/>
             <TextBlock Text="220"
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Bottom" Margin="235,0,0,81"/>
+                       VerticalAlignment="Bottom" Margin="215,0,0,73"/>
+
 
             <Image 
                     HorizontalAlignment="Center"
@@ -70,6 +71,8 @@
                     >
                 <Image Source="Assets/Juego_Pausa.png"/>
             </Button>
+            <Image Source="Assets/Juego_Euro.png" Height="50" Width="50" Margin="240,54,1210,32"/>
+            <Image Source="Assets/Juego_Punto.png" Height="50" Width="50" Margin="284,18,1166,68"/>
             <Image Source="Assets/Juego_Niño.png"  Height="150" Width="80" Margin="0,316,10,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
             <Image Source="Assets/Juego_BarraVida.png" Height="50" Width="70" Margin="0,299,9,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
             <Image Source="Assets/Juego_Enemigo.png" Height="70" Width="70" Margin="111,151,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
@@ -290,7 +293,7 @@
                 <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
             </Button>
         </Grid>
-        
+
         <Grid x:Name="losepanel" Background="Transparent" Width="1000" Height="500" Visibility="Collapsed">
             <Image Source="Assets/Juego_Panel.png" Stretch="Fill" />
             <TextBlock Text="Derrota" 
