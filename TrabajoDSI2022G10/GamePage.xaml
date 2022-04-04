@@ -12,6 +12,19 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+        <Style TargetType="Slider">
+            <Setter Property="Value" Value="50"/>
+            <Setter Property="Width" Value="350"/>
+            <Setter Property="Minimum" Value="0"/>
+            <Setter Property="Maximum" Value="100"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Foreground" Value="#6200ee"/>
+            <Setter Property="Margin" Value="0,-35,150,0"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Snap ITC"/>
+            <Setter Property="Foreground" Value="#192751"/>
+        </Style>
     </Page.Resources>
 
     <Grid >
@@ -179,8 +192,40 @@
 
         </Grid>
         <Grid x:Name="PausePanel" Background="Transparent" Width="800" Height="800" >
-            <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" /> 
-            
+            <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" />
+            <TextBlock Text="PAUSA" 
+                       HorizontalAlignment="Center"
+                       FontSize="50"
+                       Margin="0,40,0,0"/>
+            <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
+                   Margin="230,47,520,703"/>
+            <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
+                   Margin="230,47,520,703"/>
+            <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
+                   Margin="230,47,520,703"/>
+            <TextBlock Text="Banda Sonora"
+                       FontSize="35"
+                       Margin="53,158,470,604"/>
+
+            <TextBlock Text="Effecto de Sonido"
+                       FontSize="30"
+                       Margin="53,284,433,475"/>
+            <Image Source="Assets/Configuracion_IconBGM.png"
+                   Height="50"
+                   HorizontalAlignment="Right"
+                   Margin="0,-320,70,0"/>
+            <Image Source="Assets/Configuracion_IconEffect.png"
+                   Height="50"
+                   HorizontalAlignment="Right"
+                   Margin="0,-50,70,0"/>
+            <Button x:Name="BackButton" 
+                    HorizontalAlignment="Center"
+                    Margin="0,375,0,0"
+                    Click="BackButton_Click" VerticalAlignment="Top">
+                <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
+            </Button>
+            <Slider HorizontalAlignment="Left" Margin="416,166,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
+            <Slider HorizontalAlignment="Left" Margin="416,286,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
         </Grid>
     </Grid>
 </Page>
