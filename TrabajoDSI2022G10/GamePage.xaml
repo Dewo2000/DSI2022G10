@@ -34,6 +34,7 @@
     <Grid >
         <Image Source="/Assets/Juego_Fondo.png" Stretch="Fill" />
 
+
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -75,12 +76,9 @@
                     >
                 <Image Source="Assets/Juego_Pausa.png"/>
             </Button>
-            <Image Source="Assets/Juego_Euro.png" Height="50" Width="50" Margin="240,54,1210,32"/>
-            <Image Source="Assets/Juego_Punto.png" Height="50" Width="50" Margin="284,18,1166,68"/>
-            <Image Source="Assets/Juego_Niño.png"  Height="150" Width="80" Margin="0,316,10,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-            <Image Source="Assets/Juego_BarraVida.png" Height="50" Width="70" Margin="0,299,9,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
-            <Image Source="Assets/Juego_Enemigo.png" Height="70" Width="70" Margin="111,151,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Image Source="Assets/Juego_VidaEnemigo.png" Height="15" Width="62" Margin="115,144,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Image Source="Assets/Juego_Euro.png" Height="50" Width="50" Margin="244,54,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Image Source="Assets/Juego_Punto.png" Height="50" Width="50" Margin="280,18,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Image Source="Assets/Juego_VidaEnemigo.png" Height="8" Width="62" Margin="113,142,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
             <StackPanel VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.Row="1" >
                 <Button x:Name="Bomb" Width="100" Height="100" Click="Objects_Click">
@@ -204,6 +202,9 @@
             <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click">
                 <Image Source="Assets/Juego_Cuadro.png"/>
             </Button>
+            <Image Source="Assets/Juego_Niño.png"  Height="150" Width="80" Margin="0,98,10,0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="10" Grid.RowSpan="2"/>
+            <Image Source="Assets/Juego_BarraVida.png" Height="15" Width="70" Margin="0,86,10,0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="10"/>
+            <Image Source="Assets/Juego_Enemigo.png" Height="70" Width="70" Margin="108,14,0,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
 
         </Grid>
         <Grid x:Name="PausePanel" Background="Transparent" Width="800" Height="800" Visibility="Collapsed" >
@@ -326,5 +327,10 @@
                 <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
             </Button>
         </Grid>
+        <Image x:Name="FrostEff" Source="/Assets/frost.png" Stretch="Uniform" Visibility="Collapsed"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Image x:Name="ExpEff" Source="/Assets/explosion.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Image x:Name="WindEff" Source="/Assets/wind.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Image x:Name="ShieldEff" Source="/Assets/shield.png" Stretch="Uniform"  Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right" Height="297" Width="359" Margin="0,416,-120,0" />
+        <Image x:Name="HealEff" Source="/Assets/heal.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right" Height="119" Width="140" Margin="0,461,0,0" />
     </Grid>
 </Page>

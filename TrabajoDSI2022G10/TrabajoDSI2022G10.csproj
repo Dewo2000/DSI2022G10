@@ -154,6 +154,9 @@
     <Content Include="Assets\Configuracion_IconEffect.png" />
     <Content Include="Assets\Configuracion_Volver.png" />
     <Content Include="Assets\escudo.png" />
+    <Content Include="Assets\explosion.png" />
+    <Content Include="Assets\frost.png" />
+    <Content Include="Assets\heal.png" />
     <Content Include="Assets\hielo.png" />
     <Content Include="Assets\Juego_Alcohol.png" />
     <Content Include="Assets\Juego_BarraVida.png" />
@@ -182,11 +185,13 @@
     <Content Include="Assets\Pausa_ContinuarBoton.png" />
     <Content Include="Assets\Pausa_MenuPrincipalBotones.png" />
     <Content Include="Assets\NIvel_LockIcon.png" />
+    <Content Include="Assets\shield.png" />
     <Content Include="Assets\Titulo.png" />
     <Content Include="Assets\vacuna.png" />
     <Content Include="Assets\Victoria_NivelBoton.png" />
     <Content Include="Assets\Victoria_SiguienteButton.png" />
     <Content Include="Assets\viento.png" />
+    <Content Include="Assets\wind.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />

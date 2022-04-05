@@ -27,11 +27,11 @@ namespace TrabajoDSI2022G10
         Button sel;
         Button object2buy;
         int ice=0, bomb=0, shield=0, vaccine=0, wind=0;
-       
+        DispatcherTimer timer;
         public GamePage()
         {
             this.InitializeComponent();
-
+            timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
 
         }
 
@@ -190,24 +190,60 @@ namespace TrabajoDSI2022G10
             switch (object2buy.Name)
             {
                 case "Bomb":
+                  
                     bomb--;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(bomb)));
+                    ExpEff.Visibility = Visibility.Visible;
+                    timer.Start();
+                    timer.Tick += (sender, o) =>
+                    {
+                        ExpEff.Visibility = Visibility.Collapsed;
+                        timer.Stop();
+                    };
                     break;
                 case "Ice":
                     ice--;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ice)));
+                    FrostEff.Visibility = Visibility.Visible;
+                    timer.Start();
+                    timer.Tick += (sender, o) =>
+                    {
+                        FrostEff.Visibility = Visibility.Collapsed;
+                        timer.Stop();
+                    };
                     break;
                 case "Vaccine":
                     vaccine--;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
+                    HealEff.Visibility = Visibility.Visible;
+                    timer.Start();
+                    timer.Tick += (sender, o) =>
+                    {
+                        HealEff.Visibility = Visibility.Collapsed;
+                        timer.Stop();
+                    };
                     break;
                 case "Wind":
                     wind--;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(wind)));
+                    WindEff.Visibility = Visibility.Visible;
+                    timer.Start();
+                    timer.Tick += (sender, o) =>
+                    {
+                        WindEff.Visibility = Visibility.Collapsed;
+                        timer.Stop();
+                    };
                     break;
                 case "Shield":
                     shield--;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(shield)));
+                    ShieldEff.Visibility = Visibility.Visible;
+                    timer.Start();
+                    timer.Tick += (sender, o) =>
+                    {
+                        ShieldEff.Visibility = Visibility.Collapsed;
+                        timer.Stop();
+                    };
                     break;
             }
         }
