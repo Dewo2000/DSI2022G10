@@ -153,6 +153,7 @@
     <Content Include="Assets\Configuracion_IconBGM.png" />
     <Content Include="Assets\Configuracion_IconEffect.png" />
     <Content Include="Assets\Configuracion_Volver.png" />
+    <Content Include="Assets\ERROR2.jpg" />
     <Content Include="Assets\escudo.png" />
     <Content Include="Assets\explosion.png" />
     <Content Include="Assets\frost.png" />

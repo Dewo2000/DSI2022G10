@@ -11,6 +11,8 @@
         <Style x:Key="Cuadro" TargetType="Button">
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Height" Value="150"/>
         </Style>
         <Style TargetType="Slider">
             <Setter Property="Value" Value="50"/>
@@ -30,307 +32,313 @@
             <Setter Property="Foreground" Value="#FFE40B33"/>
         </Style>
     </Page.Resources>
+    <Viewbox  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill">
 
-    <Grid >
-        <Image Source="/Assets/Juego_Fondo.png" Stretch="Fill" />
+        <Grid >
+            <Image Source="/Assets/Juego_Fondo.png" Stretch="Fill" Grid.RowSpan="2"  />
+            <Grid Margin="0,0,0,0">
 
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Image  HorizontalAlignment="Left"     
+                <Image  HorizontalAlignment="Left"     
                     VerticalAlignment="Top"
-                    Source="/Assets/Juego_Panel.png" Height="136" Width="350" Stretch="Fill"/>
+                    Source="/Assets/Juego_Panel.png" Height="136" Width="400" Stretch="Fill"/>
 
-            <TextBlock Text="Puntuacion: "
+                <TextBlock Text="Puntuacion: "
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
                        VerticalAlignment="Bottom" Margin="15,0,0,73"/>
-            <TextBlock Text="Monedas: "
+                <TextBlock Text="Monedas: "
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Bottom" Margin="18,0,0,37"/>
-            <TextBlock Text="220"
+                       VerticalAlignment="Bottom" Margin="18,0,0,26"/>
+                <TextBlock Text="{x:Bind monedas,Mode=TwoWay}"
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Bottom" Margin="175,0,0,37"/>
-            <TextBlock Text="220"
+                       VerticalAlignment="Bottom" Margin="200,0,0,29"/>
+                <TextBlock Text="{x:Bind puntuacion , Mode=TwoWay}"
                        FontSize="30"
                        FontFamily="Snap ITC"
                        HorizontalAlignment="Left" 
-                       VerticalAlignment="Bottom" Margin="215,0,0,73"/>
-
-
-            <Image 
+                       VerticalAlignment="Bottom" Margin="230,0,0,68"/>
+                <Image 
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top" Source="/Assets/Juego_Progreso.png" Height="136" Width="574" Stretch="Fill">
-            </Image>
-            <Button HorizontalAlignment="Right"
+                </Image>
+                <Button HorizontalAlignment="Right"
                     VerticalAlignment="Top"
                 x:Name="PauseB" Click="PauseB_Click"  Height="100" Width="100" Margin="1390,18,0,0" 
                     >
-                <Image Source="Assets/Juego_Pausa.png"/>
-            </Button>
-            <Image Source="Assets/Juego_Euro.png" Height="50" Width="50" Margin="244,54,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
-            <Image Source="Assets/Juego_Punto.png" Height="50" Width="50" Margin="280,18,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-            <Image Source="Assets/Juego_VidaEnemigo.png" Height="8" Width="62" Margin="113,142,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-
-            <StackPanel VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.Row="1" >
-                <Button x:Name="Bomb" Width="100" Height="100" Click="Objects_Click">
-                    <Image Source="Assets/bomba.png"/>
+                    <Image Source="Assets/Juego_Pausa.png"/>
                 </Button>
-                <Button x:Name="Ice" Width="100" Height="100" Click="Objects_Click">
-                    <Image Source="Assets/hielo.png"/>
+                <Image Source="Assets/Juego_Euro.png" Height="50" Width="50" Margin="340,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                <Image Source="Assets/Juego_Punto.png" Height="50" Width="50" Margin="336,18,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+
+                <StackPanel VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.Row="1" >
+                    <Button x:Name="Bomb" Width="100" Height="100" Click="Objects_Click">
+                        <Image Source="Assets/bomba.png"/>
+                    </Button>
+                    <Button x:Name="Ice" Width="100" Height="100" Click="Objects_Click">
+                        <Image Source="Assets/hielo.png"/>
+                    </Button>
+                    <Button x:Name="Vaccine" Width="100" Height="100" Click="Objects_Click">
+                        <Image Source="Assets/vacuna.png"/>
+                    </Button>
+                    <Button x:Name="Wind" Width="100" Height="100" Click="Objects_Click">
+                        <Image Source="Assets/viento.png"/>
+                    </Button>
+                    <Button x:Name="Shield" Width="100" Height="100" Click="Objects_Click">
+                        <Image Source="Assets/escudo.png"/>
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="{x:Bind bomb , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,445,0" Style="{StaticResource Obj}"/>
+                <TextBlock Text="{x:Bind ice , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,345,0" Style="{StaticResource Obj}"/>
+                <TextBlock Text="{x:Bind vaccine , Mode=TwoWay}"  Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,245,0" Style="{StaticResource Obj}"/>
+                <TextBlock Text="{x:Bind wind , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,145,0" Style="{StaticResource Obj}"/>
+                <TextBlock Text="{x:Bind shield , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,45,0" Style="{StaticResource Obj}"/>
+
+                <Image Source="Assets/Juego_Niño.png"  Height="151" Width="80" Margin="0,320,15,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+                <ProgressBar x:Name="BaseLive" Maximum="100" Value="50" Foreground="Green" Height="10" Width="80" Margin="0,305,5,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" />
+                <Image Source="Assets/Juego_Enemigo.png" Height="70" Width="70" Margin="110,154,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+                <Image Source="Assets/Juego_VidaEnemigo.png" Height="8" Width="62" Margin="113,142,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+            </Grid>
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="140*"/>
+                    <RowDefinition Height="148*"/>
+                    <RowDefinition Height="81*"/>
+                    <RowDefinition Height="157*"/>
+                    <RowDefinition Height="155*"/>
+                    <RowDefinition Height="167*"/>
+                    <RowDefinition Height="150*"/>
+                    <RowDefinition Height="65*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="181*"/>
+                    <ColumnDefinition Width="188*"/>
+                    <ColumnDefinition Width="83*"/>
+                    <ColumnDefinition Width="179*"/>
+                    <ColumnDefinition Width="222*"/>
+                    <ColumnDefinition Width="192*"/>
+                    <ColumnDefinition Width="130*"/>
+                    <ColumnDefinition Width="183*" />
+                    <ColumnDefinition Width="150*" />
+                    <ColumnDefinition Width="170*" />
+                    <ColumnDefinition Width="212*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button x:Name="Vaccine" Width="100" Height="100" Click="Objects_Click">
-                    <Image Source="Assets/vacuna.png"/>
+                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                    <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button x:Name="Wind" Width="100" Height="100" Click="Objects_Click">
-                    <Image Source="Assets/viento.png"/>
+                <Button Grid.Row="3"  Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button x:Name="Shield" Width="100" Height="100" Click="Objects_Click">
-                    <Image Source="Assets/escudo.png"/>
+                <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                    <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-            </StackPanel>
+                <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
 
-            <TextBlock Text="{x:Bind bomb , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,445,0" Style="{StaticResource Obj}"/>
-            <TextBlock Text="{x:Bind ice , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,345,0" Style="{StaticResource Obj}"/>
-            <TextBlock Text="{x:Bind vaccine , Mode=TwoWay}"  Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,245,0" Style="{StaticResource Obj}"/>
-            <TextBlock Text="{x:Bind wind , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,145,0" Style="{StaticResource Obj}"/>
-            <TextBlock Text="{x:Bind shield , Mode=TwoWay}" Grid.Row="1" VerticalAlignment="Bottom"  HorizontalAlignment="Right" Margin="0,0,45,0" Style="{StaticResource Obj}"/>
+                <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
 
-        </Grid>
-
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="137*"/>
-                <RowDefinition Height="131*"/>
-                <RowDefinition Height="81*"/>
-                <RowDefinition Height="139*"/>
-                <RowDefinition Height="134*"/>
-                <RowDefinition Height="156*"/>
-                <RowDefinition Height="142*"/>
-                <RowDefinition Height="74*"/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="144*"/>
-                <ColumnDefinition Width="149*"/>
-                <ColumnDefinition Width="69*"/>
-                <ColumnDefinition Width="142*"/>
-                <ColumnDefinition Width="176*"/>
-                <ColumnDefinition Width="152*"/>
-                <ColumnDefinition Width="108*"/>
-                <ColumnDefinition Width="148*" />
-                <ColumnDefinition Width="149*" />
-                <ColumnDefinition Width="155*" />
-                <ColumnDefinition Width="108*" />
-            </Grid.ColumnDefinitions>
-            <Button Grid.Row="1" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="3"  Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="4" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-
-            <Button Grid.Row="1" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="3" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="4" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="5" Grid.Column="3" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-
-            <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="3" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="4" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="5" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
+                <Button Grid.Row="1" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
 
 
-            <Button Grid.Row="3" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="4" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="5" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
+                <Button Grid.Row="3" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="4" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
 
 
-            <Button Grid.Row="3" Grid.Column="8" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="5" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click">
-                <Image Source="Assets/Juego_Cuadro.png"/>
-            </Button>
-            <Image Source="Assets/Juego_Niño.png"  Height="150" Width="80" Margin="0,98,10,0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="10" Grid.RowSpan="2"/>
-            <Image Source="Assets/Juego_BarraVida.png" Height="15" Width="70" Margin="0,86,10,0" Grid.Row="3" VerticalAlignment="Top" HorizontalAlignment="Right" Grid.Column="10"/>
-            <Image Source="Assets/Juego_Enemigo.png" Height="70" Width="70" Margin="108,14,0,0" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2" Grid.RowSpan="2"/>
-
-        </Grid>
-        <Grid x:Name="PausePanel" Background="Transparent" Width="800" Height="800" Visibility="Collapsed" >
-            <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" />
-            <TextBlock Text="PAUSA" 
+                <Button Grid.Row="3" Grid.Column="8" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="5" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+                <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                    <Image Source="Assets/Juego_Cuadro.png"/>
+                </Button>
+            </Grid>
+            <Grid x:Name="PausePanel" Background="Transparent" Width="800" Height="800" Visibility="Collapsed" >
+                <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" />
+                <TextBlock Text="PAUSA" 
                        HorizontalAlignment="Center"
                        FontSize="50"
                        Margin="0,40,0,0"/>
-            <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
+                <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
                    Margin="230,47,520,703"/>
-            <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
+                <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
                    Margin="230,47,520,703"/>
-            <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
+                <Image Source="Assets/Juego_Pausa.png" Height="50" Width="50"
                    Margin="230,47,520,703"/>
-            <TextBlock Text="Banda Sonora"
+                <TextBlock Text="Banda Sonora"
                        FontSize="35"
                        Margin="53,158,470,604"/>
 
-            <TextBlock Text="Effecto de Sonido"
+                <TextBlock Text="Effecto de Sonido"
                        FontSize="30"
                        Margin="53,284,433,475"/>
-            <Image Source="Assets/Configuracion_IconBGM.png"
+                <Image Source="Assets/Configuracion_IconBGM.png"
                    Height="50"
                    HorizontalAlignment="Right"
                    Margin="0,155,69,595"/>
-            <Image Source="Assets/Configuracion_IconEffect.png"
+                <Image Source="Assets/Configuracion_IconEffect.png"
                    Height="50"
                    HorizontalAlignment="Right"
                    Margin="0,273,75,477"/>
-            <Button x:Name="MenuButton" 
+                <Button x:Name="MenuButton" 
                     HorizontalAlignment="Center"
                     Margin="0,375,0,0"
                     Click="MenuButton_Click" VerticalAlignment="Top">
-                <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="80"/>
-            </Button>
-            <Button x:Name="AgainButton" 
+                    <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="80"/>
+                </Button>
+                <Button x:Name="AgainButton" 
                     HorizontalAlignment="Center"
                     Margin="0,500,0,0"
                     Click="AgainButton_Click" VerticalAlignment="Top">
-                <Image Source="Assets/Pausa_ComenzarNuevoBotones.png" Height="80"/>
-            </Button>
-            <Button x:Name="ContinueButton" 
+                    <Image Source="Assets/Pausa_ComenzarNuevoBotones.png" Height="80"/>
+                </Button>
+                <Button x:Name="ContinueButton" 
                     HorizontalAlignment="Center"
                     Margin="0,620,0,0"
                     Click="ContinueButton_Click" VerticalAlignment="Top">
-                <Image Source="Assets/Pausa_ContinuarBoton.png" Height="80"/>
-            </Button>
-            <Slider HorizontalAlignment="Left" Margin="416,166,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
-            <Slider HorizontalAlignment="Left" Margin="416,286,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
-        </Grid>
+                    <Image Source="Assets/Pausa_ContinuarBoton.png" Height="80"/>
+                </Button>
+                <Slider HorizontalAlignment="Left" Margin="416,166,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
+                <Slider HorizontalAlignment="Left" Margin="416,286,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
+            </Grid>
 
 
 
-        <Grid x:Name="BuyPanel" Background="Transparent" Width="800" Height="800"  Visibility="Collapsed">
-            <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" />
-            <TextBlock Text="Compra" 
+            <Grid x:Name="BuyPanel" Background="Transparent" Width="800" Height="800"  Visibility="Collapsed">
+                <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" />
+                <TextBlock Text="Compra" 
                        HorizontalAlignment="Center"
                        FontSize="50"
                        Margin="0,40,0,0"/>
-            <TextBlock x:Name="Ctxt"
+                <TextBlock x:Name="Ctxt"
                        HorizontalAlignment="Center"
                        TextWrapping="Wrap"
                        Text="quieres comprar vacuna por 200 "
                        FontSize="30"
                        Margin="0,284,0,202" Width="720"/>
-            <Button x:Name="BuyBack"
+                <Button x:Name="BuyBack"
                     HorizontalAlignment="Center"
                     Margin="-400,620,0,0"
                     Click="BuyBack_Click" VerticalAlignment="Top">
-                <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
-            </Button>
-            <Button x:Name="Buy"
+                    <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
+                </Button>
+                <Button x:Name="Buy"
                     HorizontalAlignment="Center"
                     Margin="400,620,0,0"
                     Click="Buy_Click" VerticalAlignment="Top">
-                <Image Source="Assets/Compra_Pagar.png" Height="80"/>
-            </Button>
-        </Grid>
-
-        <Grid x:Name="winpanel" Background="Transparent" Width="1000" Height="500" Visibility="Collapsed">
-            <Image Source="Assets/Juego_Panel.png" Stretch="Fill" />
-            <TextBlock Text="Victoria" 
+                    <Image Source="Assets/Compra_Pagar.png" Height="80"/>
+                </Button>
+            </Grid>
+            <Grid x:Name="winpanel" Background="Transparent" Width="1000" Height="500" Visibility="Collapsed">
+                <Image Source="Assets/Juego_Panel.png" Stretch="Fill" />
+                <TextBlock Text="Victoria" 
                        HorizontalAlignment="Center"
                        FontSize="50"
                        Margin="0,157,0,-117"/>
 
-            <Button Click="GoBack"
+                <Button Click="GoBack"
                     VerticalAlignment="Top" Margin="52,348,0,0" Height="80" Width="242">
-                <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
-            </Button>
-            <Button  
+                    <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
+                </Button>
+                <Button  
                  Click="GoBack" VerticalAlignment="Top" Margin="685,351,0,0">
-                <Image Source="Assets/Victoria_SiguienteButton.png" Height="64" Width="248"/>
-            </Button>
-            <Button
+                    <Image Source="Assets/Victoria_SiguienteButton.png" Height="64" Width="248"/>
+                </Button>
+                <Button
                    
                  Click="MenuButton_Click" VerticalAlignment="Top" Margin="0,351,0,0" HorizontalAlignment="Center">
-                <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
-            </Button>
-        </Grid>
-
-        <Grid x:Name="losepanel" Background="Transparent" Width="1000" Height="500" Visibility="Collapsed">
-            <Image Source="Assets/Juego_Panel.png" Stretch="Fill" />
-            <TextBlock Text="Derrota" 
+                    <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
+                </Button>
+            </Grid>
+            <Grid x:Name="losepanel" Background="Transparent" Width="1000" Height="500" Visibility="Collapsed">
+                <Image Source="Assets/Juego_Panel.png" Stretch="Fill" />
+                <TextBlock Text="Derrota" 
                        HorizontalAlignment="Center"
                        FontSize="50"
                        Margin="0,157,0,-117"/>
 
-            <Button Click="GoBack"
+                <Button Click="GoBack"
                     VerticalAlignment="Top" Margin="52,348,0,0" Height="80" Width="242">
-                <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
-            </Button>
-            <Button  
+                    <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
+                </Button>
+                <Button  
                  Click="GoBack" VerticalAlignment="Top" Margin="685,351,0,0">
-                <Image Source="Assets/Pausa_ComenzarNuevoBotones.png" Height="64" Width="248"/>
-            </Button>
-            <Button
+                    <Image Source="Assets/Pausa_ComenzarNuevoBotones.png" Height="64" Width="248"/>
+                </Button>
+                <Button
                    
                  Click="MenuButton_Click" VerticalAlignment="Top" Margin="0,351,0,0" HorizontalAlignment="Center">
-                <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
-            </Button>
+                    <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
+                </Button>
+            </Grid>
+            <Image x:Name="FrostEff" Source="/Assets/frost.png" Stretch="Uniform" Visibility="Collapsed"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Image x:Name="ExpEff" Source="/Assets/explosion.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Image x:Name="WindEff" Source="/Assets/wind.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Image x:Name="ShieldEff" Source="/Assets/shield.png" Stretch="Uniform"  Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right" Height="297" Width="359" Margin="0,416,-120,0" />
+            <Image x:Name="HealEff" Source="/Assets/heal.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right" Height="119" Width="140" Margin="0,461,0,0" />
+            <Grid x:Name="BuyErrorP" Visibility="Collapsed">
+                <Image  Source="/Assets/ERROR2.jpg"  Width="800"  Height="700"/>
+                <Image Source="Assets/Juego_Punto.png" Height="50" Width="50" Margin="1193,573,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" />
+            </Grid>
+            <Grid x:Name="BuyErrorM" Visibility="Collapsed">
+                <Image  Source="/Assets/ERROR2.jpg"  Width="800"  Height="700"/>
+            </Grid>
+
         </Grid>
-        <Image x:Name="FrostEff" Source="/Assets/frost.png" Stretch="Uniform" Visibility="Collapsed"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Image x:Name="ExpEff" Source="/Assets/explosion.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-        <Image x:Name="WindEff" Source="/Assets/wind.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Center" HorizontalAlignment="Center" />
-        <Image x:Name="ShieldEff" Source="/Assets/shield.png" Stretch="Uniform"  Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right" Height="297" Width="359" Margin="0,416,-120,0" />
-        <Image x:Name="HealEff" Source="/Assets/heal.png" Stretch="Uniform" Visibility="Collapsed" VerticalAlignment="Top" HorizontalAlignment="Right" Height="119" Width="140" Margin="0,461,0,0" />
-    </Grid>
+    </Viewbox>
+
 </Page>

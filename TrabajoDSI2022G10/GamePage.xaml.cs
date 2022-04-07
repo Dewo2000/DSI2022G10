@@ -28,6 +28,7 @@ namespace TrabajoDSI2022G10
         Button object2buy;
         int ice=0, bomb=0, shield=0, vaccine=0, wind=0;
         DispatcherTimer timer;
+        int puntuacion=3000, monedas=1000;
         public GamePage()
         {
             this.InitializeComponent();
@@ -41,19 +42,19 @@ namespace TrabajoDSI2022G10
             sel = sender as Button;
             MenuFlyout flyout = new MenuFlyout();
      
-            flyout.Items.Add(newitem("Juego_Alcohol.png","250","Alcohol"));
-            flyout.Items.Add(newitem("Juego_Gel.png", "200", "Gel"));
-            flyout.Items.Add(newitem("Juego_Jabon.png", "100", "Jabon"));
-            flyout.Items.Add(newitem("Juego_Mascarillas.png", "150", "Mascarillas"));
-            flyout.Items.Add(newitem("Juego_Paracetamol.png", "500", "Paracetamol"));
-            flyout.Items.Add(newitem("Juego_UV.png", "200", "UV"));
-            flyout.Items.Add(newitem("Juego_Cuadro.png", "", "Reset"));
+            flyout.Items.Add(newitem("Juego_Alcohol.png",250,"Alcohol"));
+            flyout.Items.Add(newitem("Juego_Gel.png", 200, "Gel"));
+            flyout.Items.Add(newitem("Juego_Jabon.png", 100, "Jabon"));
+            flyout.Items.Add(newitem("Juego_Mascarillas.png", 150, "Mascarillas"));
+            flyout.Items.Add(newitem("Juego_Paracetamol.png", 500, "Paracetamol"));
+            flyout.Items.Add(newitem("Juego_UV.png", 200, "UV"));
+            flyout.Items.Add(newitem("Juego_Cuadro.png", 0 , "Reset"));
             sel.Flyout = flyout;
         }
-        MenuFlyoutItem newitem(string path,string price ,string name)
+        MenuFlyoutItem newitem(string path,int price ,string name)
         {
             MenuFlyoutItem item = new MenuFlyoutItem();
-            item.Text = name + " " +price;
+            item.Text = name + " " +price.ToString();
             var bmi = new BitmapIcon();
             string url = "ms-appx:///Assets/"+path;
             bmi.UriSource = new Uri(url);
@@ -61,9 +62,25 @@ namespace TrabajoDSI2022G10
             item.Icon = bmi;
             item.Click += (s, e1) =>
             {
-                Image img = new Image();
-                img.Source = new BitmapImage(new Uri(url));
-                sel.Content = img;
+                if(puntuacion >= price)
+                {
+                    puntuacion -= price;
+                    Image img = new Image();
+                    img.Source = new BitmapImage(new Uri(url));
+                    sel.Content = img;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(puntuacion)));
+                }
+                else
+                {
+                    BuyErrorP.Visibility = Visibility.Visible;
+                    timer.Start();
+                    timer.Tick += (s1, o) =>
+                    {
+                        BuyErrorP.Visibility = Visibility.Collapsed;
+                        timer.Stop();
+                    };
+                }
+                
 
             };
             return item;
@@ -139,30 +156,68 @@ namespace TrabajoDSI2022G10
 
         private void Buy_Click(object sender, RoutedEventArgs e)
         {
+            bool buy = false;
             BuyPanel.Visibility = Visibility.Collapsed;
             switch (object2buy.Name)
             {
                 case "Bomb":
-                    bomb++;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(bomb)));
+                    if(monedas >= 150)
+                    {
+                        monedas -= 150; 
+                        bomb++;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(bomb)));
+                        buy = true;
+                    }
                     break;
                 case "Ice":
-                    ice++;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ice)));
+                    if (monedas >= 100)
+                    {
+                        monedas -= 100;
+                        ice++;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(ice)));
+                        buy = true;
+                    }
                     break;
                 case "Vaccine":
-                    vaccine++;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
+                    if (monedas >= 100)
+                    {
+                        monedas -= 100;
+                        vaccine++;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
+                        buy = true;
+                    }
                     break;
                 case "Wind":
-                    wind++;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(wind)));
+                    if (monedas >= 80)
+                    {
+                        monedas -= 80;
+                        wind++;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(wind)));
+                        buy = true;
+                    }
+
                     break;
                 case "Shield":
-                    shield++;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(shield)));
+                    if (monedas >= 120)
+                    {
+                        monedas -= 120;
+                        shield++;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(shield)));
+                        buy = true;
+                    }
                     break;
             }
+            if (!buy)
+            {
+                BuyErrorM.Visibility = Visibility.Visible;
+                timer.Start();
+                timer.Tick += (s1, o) =>
+                {
+                    BuyErrorM.Visibility = Visibility.Collapsed;
+                    timer.Stop();
+                };
+            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(monedas)));
         }
         private void buy()
         {
@@ -190,7 +245,7 @@ namespace TrabajoDSI2022G10
             switch (object2buy.Name)
             {
                 case "Bomb":
-                  
+                    BaseLive.Value = BaseLive.Value - 10;
                     bomb--;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(bomb)));
                     ExpEff.Visibility = Visibility.Visible;
@@ -216,6 +271,7 @@ namespace TrabajoDSI2022G10
                     vaccine--;
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(vaccine)));
                     HealEff.Visibility = Visibility.Visible;
+                    BaseLive.Value = BaseLive.Value + 10;
                     timer.Start();
                     timer.Tick += (sender, o) =>
                     {
