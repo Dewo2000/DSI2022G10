@@ -13,127 +13,129 @@
             <Setter Property="Foreground" Value="#192751"/>
         </Style>
     </Page.Resources>
-    <Grid Background="#00948f">
-        <Grid Margin="50" Background="#7fb3b9">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <StackPanel Background="#475f86" Height="150" Width="700" Grid.Row="0">
-                <StackPanel Background="#7791c0" 
+    <Viewbox Stretch="Fill">
+        <Grid Background="#00948f">
+            <Grid Margin="50" Background="#7fb3b9">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <StackPanel Background="#475f86" Height="150" Width="700" Grid.Row="0">
+                    <StackPanel Background="#7791c0" 
                             Height="100"
                             Margin="25">
-                    <TextBlock Text="NIVELES"
+                        <TextBlock Text="NIVELES"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"
                                FontSize="60"/>
+                    </StackPanel>
                 </StackPanel>
-            </StackPanel>
-            <Button x:Name="HomeButton"
+                <Button x:Name="HomeButton"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
                     Margin="20"
                     Click="HomeButton_Click">
-                <Image Source="Assets/Nivel_HomeIcon.png" Height="75" Width="75"/>
-            </Button>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel Background="#7584a6" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#aebddb" Height="100" Width="100" Margin="10" Click="Button_Click">
-                        <TextBlock Text="1" FontSize="75" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Button>
+                    <Image Source="Assets/Nivel_HomeIcon.png" Height="75" Width="75"/>
+                </Button>
+                <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Background="#7584a6" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#aebddb" Height="100" Width="100" Margin="10" Click="Button_Click">
+                            <TextBlock Text="1" FontSize="75" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel >
+                <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
+                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-            </StackPanel>
-            <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-            </StackPanel >
-            <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-                <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                    <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                        <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                    </Button>
-                </StackPanel>
-            </StackPanel>
+            </Grid>
         </Grid>
-    </Grid>
+    </Viewbox>
 </Page>

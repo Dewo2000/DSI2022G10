@@ -39,5 +39,10 @@ namespace TrabajoDSI2022G10
                 Frame.GoBack();
             }
         }
+
+        private void BandaSonoraSlider_ValueChanged_1(object sender, RangeBaseValueChangedEventArgs e)
+        {
+
+        }
     }
 }

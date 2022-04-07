@@ -7,55 +7,56 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-        <Grid.Background>
-            <ImageBrush x:Name="Background" ImageSource="Assets/Menu_Background.png" Stretch="Fill"/>
-        </Grid.Background>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        <TextBlock Text="VIRUS 2022"
+    <Viewbox Stretch="Fill">
+        <Grid >
+            <Grid.Background>
+                <ImageBrush x:Name="Background" ImageSource="Assets/Menu_Background.png" Stretch="Fill"/>
+            </Grid.Background>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="VIRUS 2022"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    FontSize="100"
                    Foreground="#b85904"
-                   FontFamily="Snap ITC"/>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="210"/>
-                <RowDefinition Height="210"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Button x:Name="PlayButton" Grid.Row="0"
+                   FontFamily="Snap ITC" Grid.ColumnSpan="2"/>
+            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition Height="210"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Button x:Name="PlayButton" Grid.Row="0"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center"
                     Click="PlayButton_Click">
-                <Image Source="Assets/Boton_Play.png"/>
-            </Button>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                <Button x:Name="IdiomaButton" Margin="20" Click="IdiomaButton_Click">
-                    <Image Source="Assets/Boton_Lenguajes.png"/>
-                    <Button.Flyout>
-                        <Flyout>
-                            <TextBlock Text="IDIOMAS"/>
-                        </Flyout>
-                    </Button.Flyout>
+                    <Image Source="Assets/Boton_Play.png"/>
                 </Button>
-                <Button x:Name="SalidaButton" Margin="20" Click="SalidaButton_Click">
-                    <Image Source="Assets/Boton_Quit.png"/>
-                </Button>
-                <Button x:Name="ConfiguracionButton" Margin="20" Click="ConfiguracionButton_Click">
-                    <Image Source="Assets/Boton_Configuracion.png"/>
-                </Button>
-            </StackPanel>
-            <TextBlock Text="Universidad Complutense de madrid / DSI 2022 / Dewei Chen  Menggen Hu" 
+                <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button x:Name="IdiomaButton" Margin="20" Click="IdiomaButton_Click">
+                        <Image Source="Assets/Boton_Lenguajes.png"/>
+                        <Button.Flyout>
+                            <Flyout>
+                                <TextBlock Text="IDIOMAS"/>
+                            </Flyout>
+                        </Button.Flyout>
+                    </Button>
+                    <Button x:Name="SalidaButton" Margin="20" Click="SalidaButton_Click">
+                        <Image Source="Assets/Boton_Quit.png"/>
+                    </Button>
+                    <Button x:Name="ConfiguracionButton" Margin="20" Click="ConfiguracionButton_Click">
+                        <Image Source="Assets/Boton_Configuracion.png"/>
+                    </Button>
+                </StackPanel>
+                <TextBlock Text="Universidad Complutense de madrid / DSI 2022 / Dewei Chen  Menggen Hu" 
                        FontSize="30"
                        FontFamily="Snap ITC"
                        Grid.Row="2" 
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Bottom"/>
+            </Grid>
         </Grid>
-    </Grid>
+    </Viewbox>
 </Page>
