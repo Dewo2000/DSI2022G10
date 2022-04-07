@@ -80,8 +80,6 @@ namespace TrabajoDSI2022G10
                         timer.Stop();
                     };
                 }
-                
-
             };
             return item;
         }
@@ -104,7 +102,7 @@ namespace TrabajoDSI2022G10
             switch (object2buy.Name)
             {
                 case "Bomb":
-                    if (bomb > 0) exists =true;
+                    if (bomb > 0) exists = true;
                     break;
                 case "Ice":
                     if (ice > 0) exists = true;
@@ -131,9 +129,7 @@ namespace TrabajoDSI2022G10
                 flyout.Items.Add(itemU);
             }
             object2buy.Flyout = flyout;
-
         }
-
         private void MenuButton_Click(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));

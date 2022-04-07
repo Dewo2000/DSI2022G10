@@ -13,6 +13,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Width" Value="150"/>
             <Setter Property="Height" Value="150"/>
+            <Setter Property="Background" Value="Transparent"/>
         </Style>
         <Style TargetType="Slider">
             <Setter Property="Value" Value="50"/>
@@ -134,7 +135,7 @@
                     <ColumnDefinition Width="170*" />
                     <ColumnDefinition Width="212*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                <Button Grid.Row="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
                 <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
