@@ -14,6 +14,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Media.Imaging;
 using System.ComponentModel;
+using Windows.Gaming.Input;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,11 +30,122 @@ namespace TrabajoDSI2022G10
         int ice=0, bomb=0, shield=0, vaccine=0, wind=0;
         DispatcherTimer timer;
         int puntuacion=3000, monedas=1000;
+        private readonly object myLock = new object();
+        private List<Gamepad> myGamepads = new List<Gamepad>();
+        private Gamepad mainGamepad;
+        bool B = true;
+        private GamepadReading reading, prereading;
+        private GamepadVibration vibration;
+
+        DispatcherTimer GamePadTimer;
         public GamePage()
         {
             this.InitializeComponent();
             timer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2) };
+            Gamepad.GamepadAdded += (object sender, Gamepad e) =>
+            {
+                // Check if the just-added gamepad is already in myGamepads; if it isn't, add
+                // it.
+                lock (myLock)
+                {
+                    bool gamepadInList = myGamepads.Contains(e);
 
+                    if (!gamepadInList)
+                    {
+                        myGamepads.Add(e);
+                        mainGamepad = myGamepads[0];
+                    }
+                }
+            };
+            Gamepad.GamepadRemoved += (object sender, Gamepad e) =>
+            {
+                lock (myLock)
+                {
+                    int indexRemoved = myGamepads.IndexOf(e);
+
+                    if (indexRemoved > -1)
+                    {
+                        if (mainGamepad == myGamepads[indexRemoved])
+                        {
+                            mainGamepad = null;
+                        }
+
+                        myGamepads.RemoveAt(indexRemoved);
+                    }
+                }
+            };
+            GamePadTimerSetup();
+
+        }
+        void LeeMando()
+        {
+            if (mainGamepad != null)
+            {
+                prereading = reading;
+                reading = mainGamepad.GetCurrentReading();
+            }
+
+        }
+        void ZMMando()
+        {
+            if (reading.RightThumbstickX > 0.2)
+                reading.RightThumbstickX -= 0.2;
+            else if (reading.RightThumbstickX < -0.15)
+                reading.RightThumbstickX += 0.15;
+            else
+                reading.RightThumbstickX = 0;
+
+            if (reading.RightThumbstickY > 0.15)
+                reading.RightThumbstickY -= 0.15;
+            else if (reading.RightThumbstickY < -0.15)
+                reading.RightThumbstickY += 0.15;
+            else
+                reading.RightThumbstickY = 0;
+        }
+        void ActualizaIU()
+        {
+            if (GamepadButtons.B == (reading.Buttons & GamepadButtons.B) && S1.FocusState == FocusState.Unfocused && S2.FocusState == FocusState.Unfocused)//!S1.IsFocusEngaged && !S2.IsFocusEngaged)
+            {
+                BuyPanel.Visibility = Visibility.Collapsed;
+                PausePanel.Visibility = Visibility.Collapsed;
+            }
+      
+        }
+        void FeedBack()
+        {
+            if (reading.RightThumbstickX != 0 || reading.RightThumbstickY != 0)
+            {
+                vibration.RightMotor = 0.8;
+            }
+            else
+                vibration.RightMotor = 0.0;
+
+            if (reading.LeftTrigger > 0 || reading.RightTrigger > 0)
+            {
+                vibration.LeftMotor = 0.8;
+            }
+            else
+                vibration.LeftMotor = 0.0;
+
+            mainGamepad.Vibration = vibration;
+        }
+        void GamePadTimer_Tick(object sender, object e)
+        { //Función de respuesta al Timer cada 0.01s
+            if (mainGamepad != null)
+            {
+                LeeMando(); //Lee GamePAd
+                //DetectaGestosMando(); //Detecta Gestos del Mando
+                ZMMando(); //ZonaMuerta JoyStick y Triggers
+                ActualizaIU(); //Aplica cambios en IU y VM
+                FeedBack(); //Activa motores del Mando
+            }
+        }
+        public void GamePadTimerSetup()
+        {
+            GamePadTimer = new DispatcherTimer();
+            GamePadTimer.Tick += GamePadTimer_Tick;
+            GamePadTimer.Interval = new TimeSpan(100000);
+            GamePadTimer.Start();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -86,6 +198,7 @@ namespace TrabajoDSI2022G10
         private void PauseB_Click(object sender, RoutedEventArgs e)
         {
             PausePanel.Visibility = Visibility.Visible;
+            (PausePanel.Children[10] as Control).Focus(FocusState.Keyboard);
         }
         private void Objects_Click(object sender, RoutedEventArgs e)
         {
@@ -140,6 +253,10 @@ namespace TrabajoDSI2022G10
             PausePanel.Visibility = Visibility.Collapsed;
         }
 
+        private void S1_FocusDisengaged(Control sender, FocusDisengagedEventArgs args)
+        {
+            reading.Buttons = GamepadButtons.None;
+        }
         private void ContinueButton_Click(object sender, RoutedEventArgs e)
         {
             PausePanel.Visibility = Visibility.Collapsed;
@@ -236,6 +353,7 @@ namespace TrabajoDSI2022G10
                     break;
             }
             BuyPanel.Visibility = Visibility.Visible;
+            (BuyPanel.Children[4] as Control).Focus(FocusState.Keyboard);
         }
         private void Use() {
             switch (object2buy.Name)

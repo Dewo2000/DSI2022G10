@@ -34,7 +34,6 @@
         </Style>
     </Page.Resources>
     <Viewbox  VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Stretch="Fill">
-
         <Grid >
             <Image Source="/Assets/Juego_Fondo.png" Stretch="Fill" Grid.RowSpan="2"  />
             <Grid Margin="0,0,0,0">
@@ -72,7 +71,7 @@
                     HorizontalAlignment="Center"
                     VerticalAlignment="Top" Source="/Assets/Juego_Progreso.png" Height="136" Width="574" Stretch="Fill">
                 </Image>
-                <Button HorizontalAlignment="Right"
+                <Button HorizontalAlignment="Right" Background="Transparent"
                     VerticalAlignment="Top"
                 x:Name="PauseB" Click="PauseB_Click"  Height="100" Width="100" Margin="1390,18,0,0" 
                     >
@@ -82,7 +81,7 @@
                 <Image Source="Assets/Juego_Punto.png" Height="50" Width="50" Margin="336,18,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
 
-                <StackPanel VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.Row="1" >
+                <StackPanel VerticalAlignment="Bottom"  HorizontalAlignment="Right"  Orientation="Horizontal" Grid.Row="1"  XYFocusKeyboardNavigation="Enabled"   TabFocusNavigation="Once"  >
                     <Button x:Name="Bomb" Width="100" Height="100" Click="Objects_Click">
                         <Image Source="Assets/bomba.png"/>
                     </Button>
@@ -111,7 +110,7 @@
                 <Image Source="Assets/Juego_VidaEnemigo.png" Height="8" Width="62" Margin="113,142,0,0" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
             </Grid>
-            <Grid >
+            <Grid  XYFocusKeyboardNavigation="Enabled" TabFocusNavigation="Once">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="140*"/>
                     <RowDefinition Height="148*"/>
@@ -135,7 +134,7 @@
                     <ColumnDefinition Width="170*" />
                     <ColumnDefinition Width="212*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                <Button Grid.Row="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
                 <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
@@ -153,7 +152,7 @@
                 <Button Grid.Row="5" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" >
+                <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" XYFocusDown="{x:Bind Bomb}" >
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
 
@@ -182,7 +181,7 @@
                 <Button Grid.Row="5" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                <Button Grid.Row="6" Grid.Column="5" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" XYFocusDown="{x:Bind Bomb}">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
 
@@ -193,7 +192,7 @@
                 <Button Grid.Row="4" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button Grid.Row="5" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                <Button Grid.Row="5" Grid.Column="7" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" XYFocusDown="{x:Bind Bomb}" >
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
 
@@ -201,14 +200,14 @@
                 <Button Grid.Row="3" Grid.Column="8" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button Grid.Row="5" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                <Button Grid.Row="5" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" XYFocusRight="{x:Bind PauseB}" XYFocusDown="{x:Bind Bomb}">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
-                <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150">
+                <Button Grid.Row="3" Grid.Column="9" Style="{StaticResource Cuadro}" Click="Button_Click" Height="150" Width="150" XYFocusRight="{x:Bind PauseB}">
                     <Image Source="Assets/Juego_Cuadro.png"/>
                 </Button>
             </Grid>
-            <Grid x:Name="PausePanel" Background="Transparent" Width="800" Height="800" Visibility="Collapsed" >
+            <Grid x:Name="PausePanel" Background="Transparent" Width="800" Height="800" Visibility="Collapsed"  TabFocusNavigation="Cycle"  XYFocusKeyboardNavigation="Enabled">
                 <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" />
                 <TextBlock Text="PAUSA" 
                        HorizontalAlignment="Center"
@@ -235,31 +234,29 @@
                    Height="50"
                    HorizontalAlignment="Right"
                    Margin="0,273,75,477"/>
-                <Button x:Name="MenuButton" 
+                <Button x:Name="MenuButton" Background="Transparent"
                     HorizontalAlignment="Center"
                     Margin="0,375,0,0"
                     Click="MenuButton_Click" VerticalAlignment="Top">
                     <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="80"/>
                 </Button>
-                <Button x:Name="AgainButton" 
+                <Button x:Name="AgainButton" Background="Transparent"
                     HorizontalAlignment="Center"
                     Margin="0,500,0,0"
                     Click="AgainButton_Click" VerticalAlignment="Top">
                     <Image Source="Assets/Pausa_ComenzarNuevoBotones.png" Height="80"/>
                 </Button>
-                <Button x:Name="ContinueButton" 
+                <Button x:Name="ContinueButton" Background="Transparent"
                     HorizontalAlignment="Center"
                     Margin="0,620,0,0"
                     Click="ContinueButton_Click" VerticalAlignment="Top">
                     <Image Source="Assets/Pausa_ContinuarBoton.png" Height="80"/>
                 </Button>
-                <Slider HorizontalAlignment="Left" Margin="416,166,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
-                <Slider HorizontalAlignment="Left" Margin="416,286,0,0" VerticalAlignment="Top" Width="225" Height="37"/>
+                <Slider x:Name="S1" HorizontalAlignment="Left" Margin="416,166,0,0" VerticalAlignment="Top" Width="225" Height="37"   FocusDisengaged="S1_FocusDisengaged"/>
+                <Slider x:Name="S2" HorizontalAlignment="Left" Margin="416,286,0,0" VerticalAlignment="Top" Width="225" Height="37" FocusDisengaged="S1_FocusDisengaged" />
             </Grid>
 
-
-
-            <Grid x:Name="BuyPanel" Background="Transparent" Width="800" Height="800"  Visibility="Collapsed">
+            <Grid x:Name="BuyPanel" Background="Transparent" Width="800" Height="800"  Visibility="Collapsed" TabFocusNavigation="Cycle"  XYFocusKeyboardNavigation="Enabled" >
                 <Image Source="Assets/Configuracion_Fondo.png" Stretch="Fill" />
                 <TextBlock Text="Compra" 
                        HorizontalAlignment="Center"
@@ -271,13 +268,13 @@
                        Text="quieres comprar vacuna por 200 "
                        FontSize="30"
                        Margin="0,284,0,202" Width="720"/>
-                <Button x:Name="BuyBack"
+                <Button x:Name="BuyBack" Background="Transparent"
                     HorizontalAlignment="Center"
                     Margin="-400,620,0,0"
                     Click="BuyBack_Click" VerticalAlignment="Top">
                     <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
                 </Button>
-                <Button x:Name="Buy"
+                <Button x:Name="Buy" Background="Transparent"
                     HorizontalAlignment="Center"
                     Margin="400,620,0,0"
                     Click="Buy_Click" VerticalAlignment="Top">
@@ -290,17 +287,16 @@
                        HorizontalAlignment="Center"
                        FontSize="50"
                        Margin="0,157,0,-117"/>
-
-                <Button Click="GoBack"
+                <Button Click="GoBack" Background="Transparent"
                     VerticalAlignment="Top" Margin="52,348,0,0" Height="80" Width="242">
                     <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
                 </Button>
-                <Button  
+                <Button  Background="Transparent"
                  Click="GoBack" VerticalAlignment="Top" Margin="685,351,0,0">
                     <Image Source="Assets/Victoria_SiguienteButton.png" Height="64" Width="248"/>
                 </Button>
                 <Button
-                   
+                   Background="Transparent"
                  Click="MenuButton_Click" VerticalAlignment="Top" Margin="0,351,0,0" HorizontalAlignment="Center">
                     <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
                 </Button>
@@ -312,16 +308,16 @@
                        FontSize="50"
                        Margin="0,157,0,-117"/>
 
-                <Button Click="GoBack"
+                <Button Click="GoBack" Background="Transparent"
                     VerticalAlignment="Top" Margin="52,348,0,0" Height="80" Width="242">
                     <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
                 </Button>
-                <Button  
+                <Button  Background="Transparent"
                  Click="GoBack" VerticalAlignment="Top" Margin="685,351,0,0">
                     <Image Source="Assets/Pausa_ComenzarNuevoBotones.png" Height="64" Width="248"/>
                 </Button>
                 <Button
-                   
+                   Background="Transparent"
                  Click="MenuButton_Click" VerticalAlignment="Top" Margin="0,351,0,0" HorizontalAlignment="Center">
                     <Image Source="Assets/Pausa_MenuPrincipalBotones.png" Height="64" Width="248"/>
                 </Button>
