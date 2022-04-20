@@ -44,18 +44,19 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Button x:Name="PlayButton" Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        IsTabStop="False">
                     <Image Source="Assets/Boton_Play.png"/>
                 </Button>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="IdiomaButton" Margin="20">
+                    <Button x:Name="IdiomaButton" Margin="20" IsTabStop="False">
                         <Image Source="Assets/Boton_Lenguajes.png"/>
                     </Button>
-                    <Button x:Name="SalidaButton" Margin="20" >
+                    <Button x:Name="SalidaButton" Margin="20" IsTabStop="False">
                         <Image Source="Assets/Boton_Quit.png"/>
                     </Button>
-                    <Button x:Name="ConfiguracionButton" Margin="20">
+                    <Button x:Name="ConfiguracionButton" Margin="20" IsTabStop="False">
                         <Image Source="Assets/Boton_Configuracion.png"/>
                     </Button>
                 </StackPanel>
@@ -66,7 +67,7 @@
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Bottom"/>
             </Grid>
-            <StackPanel Margin="300,75,300,75" Grid.RowSpan="2">
+            <StackPanel Margin="300,75,300,75" Grid.RowSpan="2" TabFocusNavigation="Cycle" XYFocusKeyboardNavigation="Enabled">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="Assets/Configuracion_Fondo.png"/>
                 </StackPanel.Background>

@@ -22,7 +22,7 @@
                    FontSize="100"
                    Foreground="#b85904"
                    FontFamily="Snap ITC" Grid.ColumnSpan="2"/>
-            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" XYFocusKeyboardNavigation="Enabled" TabFocusNavigation="Cycle">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="210"/>
                     <RowDefinition Height="210"/>

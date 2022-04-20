@@ -12,9 +12,40 @@
             <Setter Property="FontFamily" Value="Snap ITC"/>
             <Setter Property="Foreground" Value="#192751"/>
         </Style>
+        <Style x:Key="UnblockedPanel" TargetType="StackPanel" >
+            <Setter Property="Background" Value="#373e4f"/>
+            <Setter Property="Height" Value="120"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <!--<Setter Property="IsTapEnabled" Value="False"/>-->
+        </Style>
+        <Style x:Key="BlockedPanel" TargetType="StackPanel" >
+            <Setter Property="Background" Value="#7584a6"/>
+            <Setter Property="Height" Value="120"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="Margin" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="UnblockedButton" TargetType="Button">
+            <Setter Property="Background" Value="#545d77"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="IsTabStop" Value="False"/>
+        </Style>
+        <Style x:Key="LockImage" TargetType="Image">
+            <Setter Property="Source" Value="Assets/Nivel_LockIcon.png"/>
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
     </Page.Resources>
     <Viewbox Stretch="Fill">
-        <Grid Background="#00948f">
+        <Grid Background="#00948f" TabFocusNavigation="Cycle" XYFocusKeyboardNavigation="Enabled">
             <Grid Margin="50" Background="#7fb3b9">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
@@ -40,98 +71,98 @@
                     <Image Source="Assets/Nivel_HomeIcon.png" Height="75" Width="75"/>
                 </Button>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <StackPanel Background="#7584a6" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                    <StackPanel Style="{StaticResource BlockedPanel}">
                         <Button Background="#aebddb" Height="100" Width="100" Margin="10" Click="Button_Click">
                             <TextBlock Text="1" FontSize="75" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}" >
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
                         <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
                 </StackPanel >
                 <StackPanel Grid.Row="3" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
-                    <StackPanel Background="#373e4f" Height="120" Width="120" HorizontalAlignment="Center" Margin="50" VerticalAlignment="Center">
-                        <Button Background="#545d77" Height="100" Width="100" Margin="10" >
-                            <Image Source="Assets/Nivel_LockIcon.png" Height="100" Width="75" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    <StackPanel Style="{StaticResource UnblockedPanel}">
+                        <Button Style="{StaticResource UnblockedButton}">
+                            <Image Style="{StaticResource LockImage}"/>
                         </Button>
                     </StackPanel>
                 </StackPanel>

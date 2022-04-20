@@ -40,7 +40,7 @@
                    Foreground="#b85904"
                    FontFamily="Snap ITC"/>
             
-            <Grid Grid.Row="1">
+            <Grid Grid.Row="1" IsTapEnabled="False">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="210"/>
                     <RowDefinition Height="210"/>
@@ -48,18 +48,19 @@
                 </Grid.RowDefinitions>
                 
                 <Button x:Name="PlayButton" Grid.Row="0"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center">
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        IsTabStop="False">
                     <Image Source="Assets/Boton_Play.png"/>
                 </Button>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="IdiomaButton" Margin="20">
+                    <Button x:Name="IdiomaButton" Margin="20" IsTabStop="False">
                         <Image Source="Assets/Boton_Lenguajes.png"/>
                     </Button>
-                    <Button x:Name="SalidaButton" Margin="20" >
+                    <Button x:Name="SalidaButton" Margin="20" IsTabStop="False">
                         <Image Source="Assets/Boton_Quit.png"/>
                     </Button>
-                    <Button x:Name="ConfiguracionButton" Margin="20">
+                    <Button x:Name="ConfiguracionButton" Margin="20" IsTabStop="False">
                         <Image Source="Assets/Boton_Configuracion.png"/>
                     </Button>
                 </StackPanel>
@@ -71,7 +72,7 @@
                        VerticalAlignment="Bottom"/>
             </Grid>
             
-            <StackPanel Margin="300,75,300,75" Grid.RowSpan="2">
+            <StackPanel Margin="300,75,300,75" Grid.RowSpan="2" TabFocusNavigation="Cycle" XYFocusKeyboardNavigation="Enabled">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="Assets/Configuracion_Fondo.png"/>
                 </StackPanel.Background>
