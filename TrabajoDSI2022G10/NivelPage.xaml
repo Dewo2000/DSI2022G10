@@ -64,10 +64,11 @@
                     </StackPanel>
                 </StackPanel>
                 <Button x:Name="HomeButton"
-                    HorizontalAlignment="Left"
-                    VerticalAlignment="Top"
-                    Margin="20"
-                    Click="HomeButton_Click">
+                        Background="Transparent"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Margin="20"
+                        Click="HomeButton_Click">
                     <Image Source="Assets/Nivel_HomeIcon.png" Height="75" Width="75"/>
                 </Button>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">

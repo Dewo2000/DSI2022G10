@@ -44,19 +44,20 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Button x:Name="PlayButton" Grid.Row="0"
+                        Background="Transparent"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         IsTabStop="False">
                     <Image Source="Assets/Boton_Play.png"/>
                 </Button>
                 <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button x:Name="IdiomaButton" Margin="20" IsTabStop="False">
+                    <Button x:Name="IdiomaButton" Margin="20" IsTabStop="False" Background="Transparent">
                         <Image Source="Assets/Boton_Lenguajes.png"/>
                     </Button>
-                    <Button x:Name="SalidaButton" Margin="20" IsTabStop="False">
+                    <Button x:Name="SalidaButton" Margin="20" IsTabStop="False" Background="Transparent">
                         <Image Source="Assets/Boton_Quit.png"/>
                     </Button>
-                    <Button x:Name="ConfiguracionButton" Margin="20" IsTabStop="False">
+                    <Button x:Name="ConfiguracionButton" Margin="20" IsTabStop="False" Background="Transparent">
                         <Image Source="Assets/Boton_Configuracion.png"/>
                     </Button>
                 </StackPanel>
@@ -80,7 +81,8 @@
                    Margin="0,-60,500,0"/>
                 
                 <Button x:Name="ChineseButton" 
-                    HorizontalAlignment="Left"
+                        Background="Transparent"
+                        HorizontalAlignment="Left"
                     Margin="75,100,0,0">
                     <Image Source="Assets/Lenguaje_China.png" Height="150"/>
                 </Button>
@@ -89,8 +91,9 @@
                        Margin="150,20,0,0"/>
                 
                 <Button x:Name="EspañolButton" 
-                    HorizontalAlignment="Right"
-                    Margin="0,-310,75,0">
+                        Background="Transparent"
+                        HorizontalAlignment="Right"
+                        Margin="0,-310,75,0">
                     <Image Source="Assets/Lenguaje_España.png" Height="150"/>
                 </Button>
                 <TextBlock Text="Español" 
@@ -99,9 +102,10 @@
                        Margin="0,-50,125,0"/>
 
                 <Button x:Name="BackButton" 
-                    HorizontalAlignment="Center"
-                    Margin="20"
-                    Click="BackButton_Click">
+                        Background="Transparent"
+                        HorizontalAlignment="Center"
+                        Margin="20"
+                        Click="BackButton_Click">
                     <Image Source="Assets/Configuracion_Volver.png" Height="80"/>
                 </Button>
             </StackPanel>
