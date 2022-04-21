@@ -137,7 +137,7 @@ namespace TrabajoDSI2022G10
                 //DetectaGestosMando(); //Detecta Gestos del Mando
                 ZMMando(); //ZonaMuerta JoyStick y Triggers
                 ActualizaIU(); //Aplica cambios en IU y VM
-                FeedBack(); //Activa motores del Mando
+                //FeedBack(); //Activa motores del Mando
             }
         }
         public void GamePadTimerSetup()
